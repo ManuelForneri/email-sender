@@ -23,10 +23,10 @@ app.get("/", (req, res) => {
 });
 app.post("/send-email", (req, res) => {
   try {
-    const { from, name, email, subject, message } = req.body;
+    const { emailDestinatary, from, name, email, subject, message } = req.body;
     const mailOptions = {
       from: env.email,
-      to: "manuelforneri@gmail.com",
+      to: emailDestinatary,
       subject: subject,
       html: `<div style="background-color: #f5d0c1; padding: 20px">
       <h1 style="color: #000; font-size: 36px; margin-bottom: 0">${from}</h1>
